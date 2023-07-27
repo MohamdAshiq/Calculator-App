@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EachButtonWidget extends StatelessWidget {
   const EachButtonWidget({super.key, required this.buttontext});
@@ -17,9 +18,8 @@ class EachButtonWidget extends StatelessWidget {
       child: Listener(
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 120),
-              height: 65,
-              width: 75,
-              margin: const EdgeInsets.symmetric(vertical: 10),
+              
+              margin: const EdgeInsets.symmetric(vertical: 6,horizontal: 3),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: const Color.fromARGB(255, 28, 27, 31),
@@ -38,9 +38,9 @@ class EachButtonWidget extends StatelessWidget {
               child: Center(
                 child: Text(
                   buttontext,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    fontSize: 21,
+                    fontSize: 21.sp,
                   ),
                 ),
               ),
