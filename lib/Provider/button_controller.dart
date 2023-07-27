@@ -11,11 +11,11 @@ class ButtonController extends ChangeNotifier {
 
   void onpointerdown() {
     _ispressed = true;
-        notifyListeners();
+    notifyListeners();
   }
 
   void onpointerup() {
     _ispressed = false;
-        notifyListeners();
+    notifyListeners();
   }
 }

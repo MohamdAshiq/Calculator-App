@@ -8,13 +8,11 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(
-        Constants.appname,
-        style: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 20.sp,
-        )
-      ),
+      title: Text(Constants.appname,
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 20.sp,
+          )),
       elevation: 2,
     );
   }
