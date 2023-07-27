@@ -9,7 +9,7 @@ class AnswerTextSection extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 15,
-        vertical: 10,
+        vertical: 20,
       ),
       child: SizedBox(
         width: double.infinity,

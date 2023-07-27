@@ -3,6 +3,8 @@ import 'package:calculator_app/Widgets/each_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../Provider/button_controller.dart';
+
 class AllButtonsSection extends StatelessWidget {
   const AllButtonsSection({super.key});
 
@@ -15,12 +17,13 @@ class AllButtonsSection extends StatelessWidget {
       crossAxisSpacing: 10.h,
       mainAxisSpacing: 5.h,
       physics: const NeverScrollableScrollPhysics(),
-      children: List.generate(
-        Constants.buttontext.length,
-        (index) => EachButtonWidget(
+      children: List.generate(Constants.buttontext.length, (index) {
+        final buttonController = ButtonController();
+        return EachButtonWidget(
           buttontext: Constants.buttontext[index].toString(),
-        ),
-      ),
+          buttonController: buttonController,
+        );
+      }),
     );
   }
 }

@@ -12,7 +12,9 @@ class HomePage extends StatelessWidget {
     return const Scaffold(
         appBar: AppBarWidget(),
         body: Column(
+         
           children: [
+            Spacer(),
             EntireEquationSection(),
             AnswerTextSection(),
             AllButtonsSection(),
