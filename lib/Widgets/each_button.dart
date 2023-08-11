@@ -1,7 +1,9 @@
 import 'package:calculator_app/Provider/button_controller.dart';
+import 'package:calculator_app/Provider/equation_text_controller.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class EachButtonWidget extends StatelessWidget {
   const EachButtonWidget(
@@ -12,12 +14,15 @@ class EachButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller =
+        Provider.of<EquationTextController>(context, listen: false);
+
     double blur = buttonController.ispressed ? 1.5 : 2;
     Offset distance = buttonController.ispressed
         ? const Offset(2, 2)
         : const Offset(2.5, 2.5);
     return GestureDetector(
-      onTap: () {},
+      onTap: () => controller.buttonFunctions(buttontext),
       child: Listener(
         onPointerDown: (event) => buttonController.onpointerdown(),
         onPointerUp: (event) => buttonController.onpointerup(),

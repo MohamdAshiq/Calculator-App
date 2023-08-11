@@ -1,3 +1,4 @@
+import 'package:calculator_app/Provider/equation_text_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,13 +13,24 @@ class AnswerTextSection extends StatelessWidget {
         vertical: 20,
       ),
       child: SizedBox(
+        height: 50.h,
         width: double.infinity,
-        child: Text(
-          "0",
-          textAlign: TextAlign.end,
-          style: TextStyle(
-            fontSize: 40.sp,
-            fontWeight: FontWeight.w700,
+        child: ValueListenableBuilder(
+          valueListenable: EquationTextController.answer,
+          builder: (context, String answer, child) => ListView(
+            scrollDirection: Axis.horizontal,
+            reverse: true,
+            shrinkWrap: true,
+            children: [
+              Text(
+                answer,
+                textAlign: TextAlign.end,
+                style: TextStyle(
+                  fontSize: 40.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
           ),
         ),
       ),

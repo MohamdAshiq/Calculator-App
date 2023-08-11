@@ -1,5 +1,6 @@
 import 'package:calculator_app/Constants/constants.dart';
 import 'package:calculator_app/Provider/button_controller.dart';
+import 'package:calculator_app/Provider/equation_text_controller.dart';
 import 'package:calculator_app/Screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => MultiProvider(
         providers: [
+          ChangeNotifierProvider(
+            create: (context) => EquationTextController(),
+          ),
           ChangeNotifierProvider(
             create: (context) => ButtonController(),
           ),
