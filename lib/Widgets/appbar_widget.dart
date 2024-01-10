@@ -1,6 +1,5 @@
 import 'package:calculator_app/Constants/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({super.key});
@@ -8,10 +7,10 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(Constants.appname,
+      title: const Text(Constants.appname,
           style: TextStyle(
             fontWeight: FontWeight.w500,
-            fontSize: 20.sp,
+            fontSize: 20,
           )),
       elevation: 2,
     );

@@ -1,6 +1,5 @@
 import 'package:calculator_app/Provider/equation_text_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AnswerTextSection extends StatelessWidget {
   const AnswerTextSection({super.key});
@@ -13,7 +12,7 @@ class AnswerTextSection extends StatelessWidget {
         vertical: 20,
       ),
       child: SizedBox(
-        height: 50.h,
+        height: 50,
         width: double.infinity,
         child: ValueListenableBuilder(
           valueListenable: EquationTextController.answer,
@@ -25,8 +24,8 @@ class AnswerTextSection extends StatelessWidget {
               Text(
                 answer,
                 textAlign: TextAlign.end,
-                style: TextStyle(
-                  fontSize: 40.sp,
+                style: const TextStyle(
+                  fontSize: 40,
                   fontWeight: FontWeight.w700,
                 ),
               ),

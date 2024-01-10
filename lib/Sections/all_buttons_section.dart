@@ -1,7 +1,5 @@
-import 'package:calculator_app/Constants/constants.dart';
 import 'package:calculator_app/Widgets/each_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Provider/button_controller.dart';
 
 class AllButtonsSection extends StatelessWidget {
@@ -9,19 +7,72 @@ class AllButtonsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 4,
-      padding: const EdgeInsets.all(15),
-      shrinkWrap: true,
-      crossAxisSpacing: 10.h,
-      mainAxisSpacing: 5.h,
-      physics: const NeverScrollableScrollPhysics(),
-      children: List.generate(
-          Constants.buttontext.length,
-          (index) => EachButtonWidget(
-                buttontext: Constants.buttontext[index].toString(),
-                buttonController: ButtonController(),
-              )),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 10),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              EachButtonWidget(
+                  buttontext: "C", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "DEL", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "ANS", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "/", buttonController: ButtonController()),
+            ],
+          ),
+          Row(
+            children: [
+              EachButtonWidget(
+                  buttontext: "7", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "8", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "9", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "*", buttonController: ButtonController()),
+            ],
+          ),
+          Row(
+            children: [
+              EachButtonWidget(
+                  buttontext: "4", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "5", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "6", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "-", buttonController: ButtonController()),
+            ],
+          ),
+          Row(
+            children: [
+              EachButtonWidget(
+                  buttontext: "1", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "2", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "3", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "+", buttonController: ButtonController()),
+            ],
+          ),
+          Row(
+            children: [
+              EachButtonWidget(
+                  buttontext: "00", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "0", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: ".", buttonController: ButtonController()),
+              EachButtonWidget(
+                  buttontext: "=", buttonController: ButtonController()),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
